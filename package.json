@@ -4,6 +4,7 @@
   "description": "A POC for async flow control in a React / Redux environment",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "build:development": "webpack --watch",
     "build:production": "webpack -p"
   },

@@ -1,3 +1,3 @@
-require('./js/scaffold');
+require('./js/initialise');
 
 console.log('entry');
