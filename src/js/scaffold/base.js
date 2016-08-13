@@ -2,7 +2,7 @@ console.log('scaffold');
 
 const React = require('react');
 const {Component} = React;
-const Signups = require('./signups');
+const Signups = require('../signups/react');
 
 class Scaffold extends Component {
 
@@ -10,8 +10,13 @@ class Scaffold extends Component {
 
 		return (
 			<div>
-				<h3 className="h3">scaffold</h3>
-				<Signups json={'this is a prop'} />
+				<div>
+					<h1>Squid Rings</h1>
+				</div>
+				<div className="row">
+					<Signups/>
+					<Signups/>
+				</div>
 			</div>
 		);
 

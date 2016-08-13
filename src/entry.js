@@ -1,3 +1,3 @@
 require('./js/initialise');
-
-console.log('entry');
+// require('../node_modules/foundation-sites/scss/foundation.scss');
+require('./scss/foundation.scss');
