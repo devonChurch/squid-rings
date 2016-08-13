@@ -1,0 +1,24 @@
+.apple {
+    color: red;
+}
+
+.apple:hover {
+    color: green;
+}
+
+.banana {
+    background: gold;
+    display: block;
+    position: relative;
+}
+
+.banana:before {
+    background: pink;
+    content: '';
+    display: block;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100px;
+}

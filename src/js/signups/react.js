@@ -5,6 +5,7 @@ const {connect} = require('react-redux');
 const {Component} = React;
 const {FETCH_DATA} = require('../actions');
 const Widget = require('../scaffold/widget');
+const styles = require('./signups.css');
 
 class Signups extends Component {
 
@@ -17,8 +18,8 @@ class Signups extends Component {
 		return (
 			<Widget heading={'Signups'}>
 				<ul>
-					<li>fetching: {fetching ? 'True' : 'False'}</li>
-					<li>data: {data}</li>
+					<li className={styles.apple}>fetching: {fetching ? 'True' : 'False'}</li>
+					<li className={styles.banana}>data: {data}</li>
 				</ul>
 			</Widget>
 		);

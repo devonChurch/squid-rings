@@ -17,7 +17,16 @@ module.exports = {
         ],
         loaders: [
             {test: /\.js$/, loaders: ['babel'], exclude: /node_modules/},
-            {test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'], exclude: /node_modules/} // 'style', 'css?sourceMap!postcss-loader!sass'} // 'style!css!postcss-loader!sass'
+            {test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'], exclude: /node_modules/}, // 'style', 'css?sourceMap!postcss-loader!sass'} // 'style!css!postcss-loader!sass'
+            {test: /\.css$/, loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'], exclude: /node_modules/}
+
+
+            /*
+            {
+              test: /\.css$/,
+              loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+            }
+             */
         ]
     },
     plugins: [
