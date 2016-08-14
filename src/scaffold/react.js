@@ -2,16 +2,18 @@ console.log('scaffold');
 
 const React = require('react');
 const {Component} = React;
+const Radium = require('radium');
 const Signups = require('../signups/react');
-const s = require('./scaffold.css');
+const s = require('./styles');
 
+@Radium
 class Scaffold extends Component {
 
 	render() {
 
 		return (
-			<div className={s.base}>
-				<header className={s.header}>
+			<div style={s.base}>
+				<header style={s.header}>
 					<div className="row">
 						<h1 className="columns">Squid Rings</h1>
 					</div>

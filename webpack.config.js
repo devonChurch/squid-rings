@@ -2,7 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const precss = require('precss');
 const autoprefixer = require('autoprefixer');
-const cssnext = require('postcss-cssnext')();
+// const cssnext = require('postcss-cssnext')();
 
 module.exports = {
     context: `${__dirname}/src`,
@@ -19,7 +19,7 @@ module.exports = {
         loaders: [
             {test: /\.js$/, loaders: ['babel'], exclude: /node_modules/},
             {test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'], exclude: /node_modules/}, // 'style', 'css?sourceMap!postcss-loader!sass'} // 'style!css!postcss-loader!sass'
-            {test: /\.css$/, loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'], exclude: /node_modules/}
+            // {test: /\.css$/, loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'], exclude: /node_modules/}
 
 
             /*
@@ -36,7 +36,8 @@ module.exports = {
         ])
     ],
     postcss() {
-        return [precss, cssnext, autoprefixer];
+        return [precss, autoprefixer];
+        // return [precss, cssnext, autoprefixer];
     },
     sassLoader: {
         includePaths: [path.resolve(__dirname, 'node_modules')]

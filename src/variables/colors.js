@@ -1,4 +1,10 @@
+// https://material.google.com/style/color.html#color-color-palette
+
 module.exports = {
+
+    black: '#000000',
+
+    white: '#FFFFFF',
 
     gray: {
         50: '#ECEFF1',

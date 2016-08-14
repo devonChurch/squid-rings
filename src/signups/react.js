@@ -6,7 +6,6 @@ const {Component} = React;
 const Radium = require('radium');
 const {FETCH_DATA} = require('../actions');
 const Widget = require('../widget/react');
-const s = require('./signups.css');
 
 @Radium
 class Signups extends Component {
@@ -20,8 +19,8 @@ class Signups extends Component {
 		return (
 			<Widget heading={'Signups'}>
 				<ul>
-					<li className={s.apple}>fetching: {fetching ? 'True' : 'False'}</li>
-					<li className={s.banana}>data: {data}</li>
+					<li>fetching: {fetching ? 'True' : 'False'}</li>
+					<li>data: {data}</li>
 				</ul>
 			</Widget>
 		);
@@ -51,4 +50,3 @@ function mapStateToProps(state) {
 }
 
 module.exports = connect(mapStateToProps)(Signups);
-// module.exports = connect(mapStateToProps)(radium(Signups));

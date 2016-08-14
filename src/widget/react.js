@@ -2,8 +2,10 @@ console.log('widget');
 
 const React = require('react');
 const {Component} = React;
-const s = require('./widget.css');
+const Radium = require('radium');
+const s = require('./styles');
 
+@Radium
 class Widget extends Component {
 
 	render() {
@@ -12,8 +14,8 @@ class Widget extends Component {
 
 		return (
 			<article className="small-12 large-6 columns">
-				<div className={s.base}>
-					<header className={s.header}>
+				<div style={s.base}>
+					<header>
 						<h2>{heading}</h2>
 						<button className="button">Update</button>
 					</header>
