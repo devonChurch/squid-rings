@@ -2,6 +2,7 @@ console.log('widget');
 
 const React = require('react');
 const {Component} = React;
+const s = require('./widget.css');
 
 class Widget extends Component {
 
@@ -11,15 +12,15 @@ class Widget extends Component {
 
 		return (
 			<article className="small-12 large-6 columns">
-				<row className="row">
-					<header className="small-12 columns">
-						<h2 className="apple">{heading}</h2>
+				<div className={s.base}>
+					<header className={s.header}>
+						<h2>{heading}</h2>
 						<button className="button">Update</button>
 					</header>
-					<div className="small-12 columns">
+					<div className="">
 						{children}
 					</div>
-				</row>
+				</div>
 			</article>
 		);
 

@@ -2,6 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const precss = require('precss');
 const autoprefixer = require('autoprefixer');
+const cssnext = require('postcss-cssnext')();
 
 module.exports = {
     context: `${__dirname}/src`,
@@ -13,7 +14,7 @@ module.exports = {
     },
     module: {
         preLoaders: [
-            {test: /\.js$/, loaders: ['eslint'], include: `${__dirname}/src`}
+            // {test: /\.js$/, loaders: ['eslint'], include: `${__dirname}/src`}
         ],
         loaders: [
             {test: /\.js$/, loaders: ['babel'], exclude: /node_modules/},
@@ -35,7 +36,7 @@ module.exports = {
         ])
     ],
     postcss() {
-        return [precss, autoprefixer];
+        return [precss, cssnext, autoprefixer];
     },
     sassLoader: {
         includePaths: [path.resolve(__dirname, 'node_modules')]

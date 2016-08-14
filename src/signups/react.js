@@ -3,10 +3,12 @@ console.log('signups');
 const React = require('react');
 const {connect} = require('react-redux');
 const {Component} = React;
+const Radium = require('radium');
 const {FETCH_DATA} = require('../actions');
-const Widget = require('../scaffold/widget');
-const styles = require('./signups.css');
+const Widget = require('../widget/react');
+const s = require('./signups.css');
 
+@Radium
 class Signups extends Component {
 
 	render() {
@@ -18,8 +20,8 @@ class Signups extends Component {
 		return (
 			<Widget heading={'Signups'}>
 				<ul>
-					<li className={styles.apple}>fetching: {fetching ? 'True' : 'False'}</li>
-					<li className={styles.banana}>data: {data}</li>
+					<li className={s.apple}>fetching: {fetching ? 'True' : 'False'}</li>
+					<li className={s.banana}>data: {data}</li>
 				</ul>
 			</Widget>
 		);
@@ -49,3 +51,4 @@ function mapStateToProps(state) {
 }
 
 module.exports = connect(mapStateToProps)(Signups);
+// module.exports = connect(mapStateToProps)(radium(Signups));

@@ -6,7 +6,7 @@ const {render} = require('react-dom');
 const {combineReducers, createStore} = require('redux');
 const {Provider} = require('react-redux');
 const reducers = require('./reducers');
-const Base = require('./scaffold/base');
+const Scaffold = require('./scaffold/react');
 const squidRings = document.getElementById('squidRings');
 
 
@@ -14,7 +14,7 @@ function renderMe(store) {
 
 	render(
 		<Provider store={store}>
-			<Base />
+			<Scaffold />
 		</Provider>,
 		squidRings
 	);
