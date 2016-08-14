@@ -7,14 +7,15 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
     context: `${__dirname}/src`,
     devtool: 'source-map',
-    entry: './entry.js',
+    // entry: './entry.js',
+    entry: ['babel-polyfill', './entry.js'],
     output: {
         path: `${__dirname}/dist`,
         filename: 'squid-rings.js'
     },
     module: {
         preLoaders: [
-            // {test: /\.js$/, loaders: ['eslint'], include: `${__dirname}/src`}
+            {test: /\.js$/, loaders: ['eslint'], include: `${__dirname}/src`}
         ],
         loaders: [
             {test: /\.js$/, loaders: ['babel'], exclude: /node_modules/},

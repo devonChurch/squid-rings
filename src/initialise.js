@@ -3,9 +3,13 @@ console.log('scaffold');
 const React = require('react');
 const {Component} = React;
 const {render} = require('react-dom');
-const {combineReducers, createStore} = require('redux');
+const {applyMiddleware, combineReducers, createStore} = require('redux');
 const {Provider} = require('react-redux');
-const reducers = require('./reducers');
+// const {createSagaMiddleware} = require('redux-saga');
+import createSagaMiddleware from 'redux-saga';
+const reducers = require('./reducers/all');
+const sagas = require('./sagas/all');
+const states = require('./states/all');
 const Scaffold = require('./scaffold/react');
 const squidRings = document.getElementById('squidRings');
 
@@ -29,12 +33,16 @@ function devTools() {
 
 {
 
+	const sagaMiddleware = createSagaMiddleware();
+
 	const store = createStore(
 		combineReducers(reducers), // Reducers.
-		// rehydrate.state(), // State.
-		devTools() // Redux development tools.
+		states, // rehydrate.state(), // State.
+		applyMiddleware(sagaMiddleware)
+		// devTools() // Redux development tools.
 	);
 
+	sagaMiddleware.run(sagas);
 	store.subscribe(() => renderMe(store)); // Render on state change.
 
 	renderMe(store); // Prompt initial render on page load.

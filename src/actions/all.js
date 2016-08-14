@@ -1,0 +1,4 @@
+module.exports = {
+	FETCH_DATA: 'FETCH_DATA',
+	FETCH_SUCCEEDED: 'FETCH_SUCCEEDED'
+};
