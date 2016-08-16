@@ -6,6 +6,7 @@ const {Component} = React;
 const Radium = require('radium');
 const {FETCH_DATA} = require('../actions/all');
 const Widget = require('../widget/react');
+const PieChart = require('../pie-chart/react');
 
 @Radium
 class Signups extends Component {
@@ -21,7 +22,7 @@ class Signups extends Component {
 
 	render() {
 
-		console.log(this);
+		// console.log(this);
 
 		const {fetching, data} = this.props.signups;
 
@@ -32,6 +33,7 @@ class Signups extends Component {
 					<li>fetching: {fetching ? 'True' : 'False'}</li>
 					<li>data: {data}</li>
 				</ul>
+				<PieChart />
 			</Widget>
 		);
 
