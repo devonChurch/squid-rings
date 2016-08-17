@@ -97,25 +97,27 @@ function scaffold(container, data) {
         radius = Math.min(width, height) / 2,
 
         pie = d3.pie()
-                .sort(null),
+            .sort(null),
 
         arc = d3.arc()
-                .innerRadius(radius - 100)
-                .outerRadius(radius - 50),
+            .innerRadius(radius - 100)
+            .outerRadius(radius - 50),
 
-        svg = d3.select('#barGraph')
-                .append('svg')
-                .attr('width', width)
-                .attr('height', height)
-                .append('g')
-                .attr('transform', `translate(${width / 2}, ${height / 2})`),
+        // svg = d3.select('#barGraph')
+        svg = d3.select(container)
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .append('g')
+            .attr('transform', `translate(${width / 2}, ${height / 2})`);
 
-        path = svg.selectAll('path')
-                .data(pie(data))
-                .enter()
-                .append('path')
-                .attr('fill', (d, i) => colors[i])
-                .attr('d', arc);
+        // path = svg.selectAll('path')
+        svg.selectAll('path')
+            .data(pie(data))
+            .enter()
+            .append('path')
+            .attr('fill', (d, i) => colors[i])
+            .attr('d', arc);
 
 }
 
@@ -142,6 +144,8 @@ class PieChart extends Component {
 
         // pieChart
 
+        return;
+
     }
 
     componentDidUpdate() {
@@ -150,8 +154,26 @@ class PieChart extends Component {
 
         const container = this.refs.pieChart;
         const data = [6, 2, 5, 34, 12, 6];
-        scaffold(container, data);
+        // scaffold(container, data);
 
+        const width = 460;
+        const height = 300;
+        const radius = Math.min(width, height) / 2;
+
+        const pie = d3.pie()
+            .sort(null);
+
+        const arc = d3.arc()
+            .innerRadius(radius - 100)
+            .outerRadius(radius - 50);
+
+        const path = d3.select(container)
+            .selectAll('path')
+            .data(pie(data))
+            .attr('d', arc);
+
+        // svg = d3.select(container)
+        //
         // var selection = d3.select("#chart")
         //      .selectAll(".bar").data(numbers)
         //      .style("height", function(d){
@@ -161,11 +183,15 @@ class PieChart extends Component {
         //            return (100 - d) + "px";
         //      });
 
+        return;
+
     }
 
     componentWillUnmount() {
 
         console.log(' - - componentWillUnmount - - ');
+
+        return;
 
     }
 

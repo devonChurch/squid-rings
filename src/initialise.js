@@ -1,5 +1,3 @@
-console.log('scaffold');
-
 const React = require('react');
 const {Component} = React;
 const {render} = require('react-dom');

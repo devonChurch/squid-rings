@@ -1,5 +1,3 @@
-console.log('signups');
-
 const React = require('react');
 const {connect} = require('react-redux');
 const {Component} = React;

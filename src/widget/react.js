@@ -1,5 +1,3 @@
-console.log('widget');
-
 const React = require('react');
 const {Component} = React;
 const Radium = require('radium');
