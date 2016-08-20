@@ -1,8 +1,8 @@
-console.log('scaffold');
-
 const React = require('react');
 const {Component} = React;
 const Radium = require('radium');
+const Header = require('../header/react');
+const Authors = require('../authors/react');
 const Signups = require('../signups/react');
 const s = require('./styles');
 
@@ -13,12 +13,13 @@ class Scaffold extends Component {
 
 		return (
 			<div style={s.base}>
-				<header style={s.header}>
-					<div>
-						<h1>Squid Rings</h1>
-					</div>
-				</header>
-				<div>
+				<div style={s.header}>
+					<Header/>
+				</div>
+				<div style={s.widgets}>
+					<Authors/>
+					<Signups/>
+					<Signups/>
 					<Signups/>
 					<Signups/>
 				</div>

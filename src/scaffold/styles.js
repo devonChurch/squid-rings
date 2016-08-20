@@ -4,12 +4,22 @@ module.exports = {
 
     base: {
         background: colors.gray['50'],
-        minHeight: '100vh'
+        height: '100vh',
+        minHeight: '250px',
+        minWidth: '400px'
     },
 
     header: {
-        background: colors.white,
-        border: `1px solid ${colors.gray['100']}`,
-        marginBottom: spacing.large,
+        height: '10%'
+    },
+
+    widgets: {
+        display: 'flex',
+        flexDirection: 'column',
+        flexWrap: 'wrap',
+        height: '90%',
+        padding: spacing[400],
+        width: '100%'
     }
+
 };

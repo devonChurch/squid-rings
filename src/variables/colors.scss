@@ -1,0 +1,40 @@
+// https://material.google.com/style/color.html#color-color-palette
+
+$black: #000000;
+
+$white: #FFFFFF;
+
+$colors: (
+
+    gray: (
+        50: #ECEFF1,
+        100: #CFD8DC,
+        200: #B0BEC5,
+        300: #90A4AE,
+        400: #78909C,
+        500: #607D8B,
+        600: #546E7A,
+        700: #455A64,
+        800: #37474F,
+        900: #263238
+    ),
+
+    blue: (
+        50: #E3F2FD,
+        100: #BBDEFB,
+        200: #90CAF9,
+        300: #64B5F6,
+        400: #42A5F5,
+        500: #2196F3,
+        600: #1E88E5,
+        700: #1976D2,
+        800: #1565C0,
+        900: #0D47A1
+    )
+
+);
+
+@function color($type, $tint: 500) {
+    $type: map-get($colors, $type);
+    @return map-get($type, $tint);
+}
