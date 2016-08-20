@@ -1,6 +1,7 @@
 const React = require('react');
 const {Component} = React;
 const Radium = require('radium');
+const Icons = require('../icons/react');
 const styles = require('./styles');
 
 @Radium
@@ -16,7 +17,9 @@ class Widget extends Component {
 				<div style={s.spacing}>
 					<header style={s.header}>
 						<h2>{heading}</h2>
-						<button>Update</button>
+						<button>
+							<Icons icons={'menu'} color={color}/>
+						</button>
 					</header>
 					<div style={s.content}>
 						{children}

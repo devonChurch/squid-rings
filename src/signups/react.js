@@ -25,7 +25,7 @@ class Signups extends Component {
 		const {fetching, data} = this.props.signups;
 
 		return (
-			<Widget heading={'Signups'} vertical={false} color={'gray'}>
+			<Widget heading={'Signups'} vertical={false} color={'teal'}>
 				<button onClick={() => this.clicked()}>Click me</button>
 				<ul>
 					<li>fetching: {fetching ? 'True' : 'False'}</li>
