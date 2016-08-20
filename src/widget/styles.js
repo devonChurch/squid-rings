@@ -30,9 +30,16 @@ module.exports = ({
         },
 
         header: {
+            alignItems: 'center',
             borderBottom: border,
             color: baseColor[500],
-            padding: `${spacing[900]} ${spacing[900]} 0 ${spacing[900]}`,
+            display: 'flex',
+            justifyContent: 'space-between',
+            padding: `0 ${spacing[900]}`,
+        },
+
+        heading: {
+            padding: `${spacing[900]} 0`,
         },
 
         content: {

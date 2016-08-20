@@ -1,6 +1,7 @@
 const React = require('react');
 const {Component} = React;
 const Radium = require('radium');
+const Icons = require('../icons/react');
 const s = require('./styles');
 
 @Radium
@@ -10,7 +11,11 @@ class Header extends Component {
 
 		return (
             <header style={s.base}>
-                <h1>Squid Rings</h1>
+                <h1 style={s.heading}>Squid Rings</h1>
+                <div>
+                    <Icons icon={'time'}/>
+                    <Icons icon={'date'}/>
+                </div>
             </header>
 		);
 
