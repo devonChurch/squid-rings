@@ -26,7 +26,7 @@ class Signups extends Component {
 
 		return (
 			<Widget heading={'Signups'}>
-				<button className="button" onClick={() => this.clicked()}>Click me</button>
+				<button onClick={() => this.clicked()}>Click me</button>
 				<ul>
 					<li>fetching: {fetching ? 'True' : 'False'}</li>
 					<li>data: {data}</li>

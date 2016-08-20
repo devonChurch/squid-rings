@@ -40,7 +40,7 @@ module.exports = {
         return [precss, autoprefixer];
         // return [precss, cssnext, autoprefixer];
     },
-    sassLoader: {
-        includePaths: [path.resolve(__dirname, 'node_modules')]
-    }
+    // sassLoader: {
+    //     includePaths: [path.resolve(__dirname, 'node_modules')]
+    // }
 };

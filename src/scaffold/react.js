@@ -14,11 +14,11 @@ class Scaffold extends Component {
 		return (
 			<div style={s.base}>
 				<header style={s.header}>
-					<div className="row">
-						<h1 className="columns">Squid Rings</h1>
+					<div>
+						<h1>Squid Rings</h1>
 					</div>
 				</header>
-				<div className="row">
+				<div>
 					<Signups/>
 					<Signups/>
 				</div>

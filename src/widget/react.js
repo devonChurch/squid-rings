@@ -11,13 +11,13 @@ class Widget extends Component {
 		const {heading, children} = this.props;
 
 		return (
-			<article className="small-12 large-6 columns">
+			<article>
 				<div style={s.base}>
 					<header>
 						<h2>{heading}</h2>
-						<button className="button">Update</button>
+						<button>Update</button>
 					</header>
-					<div className="">
+					<div>
 						{children}
 					</div>
 				</div>
