@@ -17,14 +17,6 @@ const request = (() => {
 
         milliseconds = () => new Date().getTime(),
 
-        add = ({action, delay, key}) => {
-
-            const next = milliseconds() + delay;
-
-            instances[key] = {action, delay, next};
-
-        },
-
         run = (key) => {
 
             const {action, delay} = instances[key];
@@ -43,6 +35,16 @@ const request = (() => {
 
             elapsed = milliseconds();
             keys.forEach((key) => run(key));
+
+        },
+
+        add = ({action, delay, key}) => {
+
+            const next = milliseconds() + delay;
+
+            instances[key] = {action, delay, next};
+            // Immediately call to get the initial data injected into the UI.
+            call(key);
 
         },
 

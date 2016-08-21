@@ -26,7 +26,7 @@ class Authors extends Component {
 	render() {
 
 		return (
-			<Widget heading={'Top Authors'} vertical={true} color={'blue'}>
+			<Widget requestKey={'authors'} heading={'Top Authors'} vertical={true} color={'blue'}>
 				authors....
 			</Widget>
 		);

@@ -14,8 +14,8 @@ class Signups extends Component {
 
 		console.log('signups MOUNT');
 
-		// const action = () => this.props.dispatch({type: FETCH_DATA});
-		const action = () => console.log('**** ACTION (signups) ****');
+		const action = () => this.props.dispatch({type: FETCH_DATA});
+		// const action = () => console.log('**** ACTION (signups) ****');
 		const delay = 6000;
 		const key = 'signups';
 
@@ -41,7 +41,7 @@ class Signups extends Component {
 		const {fetching, data} = this.props.signups;
 
 		return (
-			<Widget heading={'Signups'} vertical={false} color={'teal'}>
+			<Widget requestKey={'signups'} heading={'Signups'} vertical={false} color={'teal'}>
 				<button onClick={() => this.clicked()}>Click me</button>
 				<ul>
 					<li>fetching: {fetching ? 'True' : 'False'}</li>

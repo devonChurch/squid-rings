@@ -12,10 +12,17 @@ module.exports = (state = signupState, action) => {
 	switch (action.type) {
 
 		case FETCH_DATA:
-			return {...state, data: 5};
+			return {
+				...state,
+				fetching: true
+			};
 
 		case FETCH_SUCCEEDED:
-			return {...state, data: action.data};
+			return {
+				...state,
+				data: action.data,
+				fetching: false
+			};
 
 		default:
 			return state;

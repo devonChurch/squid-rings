@@ -1,11 +1,23 @@
 const React = require('react');
 const {Component} = React;
 const Radium = require('radium');
+const request = require('../request/all');
 const Icons = require('../icons/react');
 const styles = require('./styles');
 
 @Radium
 class Widget extends Component {
+
+	refresh() {
+
+		const {requestKey} = this.props;
+
+		console.log('REFRESH', requestKey);
+		// console.log('REFRESH');
+
+		request.call(requestKey);
+
+	}
 
 	render() {
 
@@ -18,7 +30,7 @@ class Widget extends Component {
 					<header style={s.header}>
 						<h2 style={s.heading}>{heading}</h2>
 						<div>
-							<button>
+							<button onClick={() => this.refresh()}>
 								<Icons icon={'refresh'} color={color}/>
 							</button>
 							<button>
