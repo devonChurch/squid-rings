@@ -31,6 +31,9 @@ function devTools() {
 
 {
 
+
+	console.log(states, reducers);
+
 	const sagaMiddleware = createSagaMiddleware();
 
 	const store = createStore(

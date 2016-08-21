@@ -20,6 +20,8 @@ class Widget extends Component {
 						<div>
 							<button>
 								<Icons icon={'refresh'} color={color}/>
+							</button>
+							<button>
 								<Icons icon={'menu'} color={color}/>
 							</button>
 						</div>

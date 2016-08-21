@@ -1,5 +1,4 @@
+const header = require('../header/reducer');
 const signups = require('../signups/reducer');
 
-module.exports = {
-    signups
-};
+module.exports = {header, signups};
