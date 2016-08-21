@@ -1,3 +1,5 @@
+console.log('request');
+
 const request = (() => {
 
     // set a action with a delay before call and a key to reference again
@@ -23,31 +25,35 @@ const request = (() => {
 
         },
 
-        call = () => {
+        run = (key) => {
 
+            const {action, delay} = instances[key];
+
+            action();
+            instances[key] = {
+                ...instances[key],
+                next: elapsed + delay
+            };
+
+        },
+
+        call = (ref) => {
+
+            const keys = ref === 'all' ? Object.keys(instances) : [ref];
+
+            elapsed = milliseconds();
+            keys.forEach((key) => run(key));
 
         },
 
         query = () => {
 
-            // console.log('query!');
             elapsed = milliseconds();
             Object.keys(instances).forEach((key) => {
 
+                const {next} = instances[key];
 
-                // let instance = instances[key];
-                const {action, delay, next} = instances[key];
-                console.log('TESTING', key, `${elapsed} >= ${next}`);
-
-                if (elapsed >= next) {
-
-                    action();
-                    instances[key] = {
-                        ...instances[key],
-                        next: elapsed + delay
-                    };
-
-                }
+                if (elapsed >= next) run(key);
 
             });
 

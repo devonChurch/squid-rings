@@ -1,9 +1,9 @@
-console.log('pieChart');
+// console.log('pieChart');
 // http://nicolashery.com/integrating-d3js-visualizations-in-a-react-app/
 
 const d3 = require('d3');
 
-console.log('d3', d3);
+// console.log('d3', d3);
 
 /*
 const data = [4, 8, 15, 16, 23, 42];
@@ -140,7 +140,7 @@ class PieChart extends Component {
         const data = [4, 8, 15, 16, 23, 42];
         scaffold(container, data);
 
-        console.log(' - - componentDidMount - - ');
+        // console.log(' - - componentDidMount - - ');
 
         // pieChart
 
@@ -150,7 +150,7 @@ class PieChart extends Component {
 
     componentDidUpdate() {
 
-        console.log(' - - componentDidUpdate - - ');
+        // console.log(' - - componentDidUpdate - - ');
 
         const container = this.refs.pieChart;
         const data = [6, 2, 5, 34, 12, 6];
@@ -189,7 +189,7 @@ class PieChart extends Component {
 
     componentWillUnmount() {
 
-        console.log(' - - componentWillUnmount - - ');
+        // console.log(' - - componentWillUnmount - - ');
 
         return;
 
@@ -197,7 +197,7 @@ class PieChart extends Component {
 
 	render() {
 
-		console.log('PieChart', this);
+		// console.log('PieChart', this);
 
 
 		return (

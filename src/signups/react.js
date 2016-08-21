@@ -12,10 +12,10 @@ class Signups extends Component {
 
 	componentDidMount() {
 
-		console.log('request', request);
+		console.log('signups MOUNT');
 
 		// const action = () => this.props.dispatch({type: FETCH_DATA});
-		const action = () => console.log('**** ACTION ****');
+		const action = () => console.log('**** ACTION (signups) ****');
 		const delay = 6000;
 		const key = 'signups';
 
@@ -29,6 +29,8 @@ class Signups extends Component {
 
 
 		// this.props.dispatch({type: FETCH_DATA});
+
+		request.call('signups');
 
 	}
 
