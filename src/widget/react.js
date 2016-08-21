@@ -19,6 +19,7 @@ class Widget extends Component {
 						<h2 style={s.heading}>{heading}</h2>
 						<div>
 							<button>
+								<Icons icon={'refresh'} color={color}/>
 								<Icons icon={'menu'} color={color}/>
 							</button>
 						</div>
